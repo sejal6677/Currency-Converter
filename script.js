@@ -3,6 +3,7 @@ const dropList = document.querySelectorAll("form select"),
   toCurrency = document.querySelector(".to select"),
   getButton = document.querySelector("form button");
 
+// Populate dropdowns and set default selections #populateDropdowns #defaultCurrency
 for (let i = 0; i < dropList.length; i++) {
   for (let currency_code in country_list) {
     let selected =
@@ -21,6 +22,7 @@ for (let i = 0; i < dropList.length; i++) {
   });
 }
 
+// Load currency flag image #loadFlagFunction
 function loadFlag(element) {
   for (let code in country_list) {
     if (code == element.value) {
@@ -32,6 +34,7 @@ function loadFlag(element) {
   }
 }
 
+// Load initial exchange rate on page load #initialLoad
 window.addEventListener("load", () => {
   getExchangeRate();
 });
