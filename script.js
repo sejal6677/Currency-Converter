@@ -38,12 +38,12 @@ function loadFlag(element) {
 window.addEventListener("load", () => {
   getExchangeRate();
 });
-
+// Trigger exchange rate retrieval on button click #getExchangeRateButton
 getButton.addEventListener("click", (e) => {
   e.preventDefault();
   getExchangeRate();
 });
-
+// Swap currencies and flags on icon click #currencySwap
 const exchangeIcon = document.querySelector("form .icon");
 exchangeIcon.addEventListener("click", () => {
   let tempCode = fromCurrency.value;
@@ -53,7 +53,7 @@ exchangeIcon.addEventListener("click", () => {
   loadFlag(toCurrency);
   getExchangeRate();
 });
-
+// Fetch and display exchange rate #fetchExchangeRate
 function getExchangeRate() {
   const amount = document.querySelector("form input");
   const exchangeRateTxt = document.querySelector("form .exchange-rate");
